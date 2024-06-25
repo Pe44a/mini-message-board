@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  each message in messages
+    .message-container
+      .user= message.user
+      .text= message.text
+      .added(style="font-size: smaller; margin-bottom:9px;")= message.added
