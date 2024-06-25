@@ -4,8 +4,22 @@ block content
   h1= title
   p Welcome to #{title}
 
-  each message in messages
-    .message-container
-      .user= message.user
-      .text= message.text
-      .added(style="font-size: smaller; margin-bottom:9px;")= message.added
+  if messages && messages.length
+    h1 New Message
+    form(method="POST" action="/new")
+      label(for="author") Author:
+      input(type="text" id="author" name="author" required)
+      br
+      label(for="text") Message:
+      textarea(id="text" name="text" required)
+      br
+      button(type="submit")(style="font-size: smaller; margin-bottom:20px;") Submit
+
+    each message in messages
+      .message-container
+        .user= message.user
+        .text= message.text
+        .added(style="font-size: smaller; margin-bottom:9px;")= message.added
+        
+  else
+    p No messages to display.
