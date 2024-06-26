@@ -1,6 +1,7 @@
 # mini-message-board
 
 A simple Express.js application for posting and viewing messages.
+Check-out here: https://mini-message-board-yeah.adaptable.app/
 
 ## Features
 
